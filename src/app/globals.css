@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0d0d0d;
+  --foreground: #171717;
+  --primary: #4ea8de;
+  --secondary: #1e6f9f;
+  --primaryBorder: #262626;
+  --primaryBackground: #333333;
+  --primaryGray: #f2f2f2;
+  --lightGray: #d9d9d9;
+  --secondaryGray: #808080;
+  --primaryPurple: #8284fa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 20px;
+  color: #333;
+}
+
+.radio-label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #4ea8de;
+  transition: all 0.3s;
+}
+
+.radio-input:checked + .radio-label:before {
+  background-color: #007bff;
+  border-color: #4ea8de;
+}
+
+.radio-input:checked + .radio-label:after {
+  content: "\2713";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: white;
+}
+
+.radio-label:hover:before {
+  border-color: #4ea8de;
+}
